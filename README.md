@@ -1,30 +1,43 @@
 # jwt-encoder-cli
-Command line tool for encoding and decoding json web tokens
 
-#Usage
+## Flags
 
-jwt-encoder *command*
+### required:
 
-where *command* is one of:
-  encode, decode
+```sh
+  --token-type <key|user>
+```
 
-jwt-encoder *cmd* -h quick help on *cmd*
+If --token-type is "key":
 
-jwt-encoder encode
-required:
--s *secret* or -sf *secret file location* (may need to use file if using a secret that has whitespace or line breaks, like an rsa key)
--f *filename and path to payload*
+```sh
+  -access-key <access_key>
+```
+
+If --token-type is "user":
+
+```sh
+  --iss <issuer>
+  ```
+...for validating the JWT (like, "--iss https://blinkmobile.auth0.com/")
+
+```sh
+  --name <first last>
+```
+
+```sh
+  --email <email>
+```
 
 optional:
--a *algorithm* (defaults to 'HS256')
--e *expiration* (in milliseconds. defaults to 1 day if no value is given when flag is present)
 
+```sh
+-a <algorithm> (defaults to 'HS256')
+-base64 (Base64 encode the secret key)
+```
 
-jwt-encoder decode
-required:
--s *secret* or -sf *secret file location* (may need to use file if using a secret that has whitespace or line breaks, like an rsa key)
--t *token*
+## A key for Simple Auth
 
-optional:
--a *algorithm* (defaults to 'HS256')
-
+```sh
+jwt-encoder --token-type user --name Kynan Hughes --email kynan@blinkmobile.com.au --secret-key FRnyvFWszFFyb2CzFHwTJLhE592Mxc5rHVTbbSYQ6gQzHaT28r33b2mId8QP53Gl --iss https://blinkmobile.auth0.com/ -base64
+```

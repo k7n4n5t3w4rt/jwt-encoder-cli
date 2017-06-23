@@ -1,8 +1,23 @@
 jwt-encoder encode
+
 required:
--s <secret> or -sf <secret file location> (may need to use file if using a secret that has whitespace or line breaks, like an rsa key)
--f <filename and path to payload>
+
+  --token-type <key|user>
+
+if --token-type is "key":
+
+  -access-key <access_key>
+
+if --token-type is "user":
+
+  --iss <issuer> (for validating the JWT: like, "--iss https://blinkmobile.auth0.com/")
+  --name <first last>
+  --email <email>
 
 optional:
+
 -a <algorithm> (defaults to 'HS256')
--e <expiration> (in milliseconds. defaults to 1 day if no value is given when flag is present)
+-base64 (Base64 encode the secret key)
+
+
+

@@ -4,7 +4,10 @@
   "description": "Encodes or decodes jwt tokens",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run eslint",
+    "eslint": "eslint --fix --cache .",
+    "pretest": "npm run fixpack",
+    "fixpack": "fixpack"
   },
   "author": "Joshua P Kon",
   "license": "ISC",
@@ -16,5 +19,28 @@
   "preferGlobal": true,
   "bin": {
     "jwt-encoder": "index.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-plugin-import": "^2.5.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "fixpack": "^2.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k7n4n5t3w4rt/jwt-encoder-cli.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/k7n4n5t3w4rt/jwt-encoder-cli/issues"
+  },
+  "homepage": "https://github.com/k7n4n5t3w4rt/jwt-encoder-cli#readme",
+  "engines": {
+    "node": ">=7",
+    "npm": ">=4"
   }
 }
