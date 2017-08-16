@@ -39,5 +39,5 @@ optional:
 ## A key for Simple Auth
 
 ```sh
-jwt-encoder --token-type user --name Kynan Hughes --email kynan@blinkmobile.com.au --secret-key FRnyvFWszFFyb2CzFHwTJLhE592Mxc5rHVTbbSYQ6gQzHaT28r33b2mId8QP53Gl --iss https://blinkmobile.auth0.com/ -base64
+jwt-encoder --token-type user --name Kynan Hughes --email kynan@blinkmobile.com.au --secret-key <SECRET_KEY> --iss https://blinkmobile.auth0.com/ -base64
 ```
